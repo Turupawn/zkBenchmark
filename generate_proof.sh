@@ -4,10 +4,9 @@ set -e
 # Install Circom if not already installed
 if ! command -v circom &> /dev/null; then
     echo "Installing Circom..."
-    curl -L -o circom.tar.gz https://github.com/iden3/circom/releases/download/v2.1.4/circom-linux-amd64.tar.gz
-    tar -xzf circom.tar.gz
+    curl -L -o circom https://github.com/iden3/circom/releases/download/v2.1.4/circom-linux-amd64
+    chmod +x circom
     sudo mv circom /usr/local/bin
-    rm circom.tar.gz
 fi
 
 # Compile the circuit
