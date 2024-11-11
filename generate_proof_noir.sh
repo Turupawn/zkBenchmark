@@ -4,6 +4,7 @@ set -e
 # Install Noir if not already installed
 if ! command -v noir &> /dev/null; then
     curl -L noirup.dev | bash
+    source /home/runner/.bashrc
     noirup
 fi
 
