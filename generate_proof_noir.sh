@@ -5,15 +5,26 @@ set -e
 if ! command -v noir &> /dev/null; then
     echo "Installing Noir..."
 
-    # Ensure we're downloading the correct file for Linux
+    # Download the correct Noir release tarball
     curl -sSL https://github.com/noir-lang/noir/releases/download/v0.3.0/noir-linux-x86_64.tar.gz -o noir.tar.gz
 
-    # Extract the tarball
+    # Check if the tar file was downloaded correctly (i.e., it's not empty or corrupted)
+    if [ ! -s noir.tar.gz ]; then
+        echo "Error: The tarball did not download correctly."
+        exit 1
+    fi
+
+    # Extract the tarball into /usr/local/bin
     tar -xvzf noir.tar.gz -C /usr/local/bin
+
+    # Remove the tarball to clean up
+    rm noir.tar.gz
+
+    echo "Noir installed successfully."
 fi
 
-# Now continue with the rest of your script
-echo "Noir installed successfully."
+# Proceed with the rest of the script for proof generation
+echo "Proceeding with proof generation..."
 
 # Compile the Fibonacci Noir circuit
 echo "Compiling Fibonacci Noir circuit..."
