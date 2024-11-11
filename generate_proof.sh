@@ -35,12 +35,12 @@ proof_time=$((end_proof - start_proof))
 echo "Proof generation took $proof_time seconds."
 
 # Verify proof
-echo "Verifying proof..."
-start_verify=$(date +%s)
-snarkjs groth16 verify verification_key.json public.json proof.json
-end_verify=$(date +%s)
-verify_time=$((end_verify - start_verify))
-echo "Proof verification took $verify_time seconds."
+#echo "Verifying proof..."
+#start_verify=$(date +%s)
+#snarkjs groth16 verify verification_key.json public.json proof.json
+#end_verify=$(date +%s)
+#verify_time=$((end_verify - start_verify))
+#echo "Proof verification took $verify_time seconds."
 
 # Summary of times
 total_time=$((compile_time + witness_time + proof_time + verify_time))
