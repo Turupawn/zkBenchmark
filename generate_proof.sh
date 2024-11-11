@@ -28,7 +28,7 @@ echo "Witness generation took $witness_time seconds."
 # Generate proof
 echo "Setting up and generating proof..."
 start_proof=$(date +%s)
-snarkjs groth16 setup example.r1cs powersOfTau28_hez_final_10.ptau example.zkey
+snarkjs groth16 setup example.r1cs ppot_0080_10.ptau example.zkey
 snarkjs groth16 prove example.zkey witness.wtns proof.json public.json
 end_proof=$(date +%s)
 proof_time=$((end_proof - start_proof))
