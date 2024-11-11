@@ -15,7 +15,7 @@ if ! command -v noir &> /dev/null; then
     fi
 
     # Extract the tarball into /usr/local/bin
-    tar -xvzf noir.tar.gz -C /usr/local/bin
+    tar -czf noir.tar.gz -C /usr/local/bin
 
     # Remove the tarball to clean up
     rm noir.tar.gz
