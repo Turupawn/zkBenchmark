@@ -3,24 +3,8 @@ set -e
 
 # Install Noir if not already installed
 if ! command -v noir &> /dev/null; then
-    echo "Installing Noir..."
-
-    # Download the correct Noir release tarball
-    curl -sSL https://github.com/noir-lang/noir/releases/download/v0.3.0/noir-linux-x86_64.tar.gz -o noir.tar.gz
-
-    # Check if the tar file was downloaded correctly (i.e., it's not empty or corrupted)
-    if [ ! -s noir.tar.gz ]; then
-        echo "Error: The tarball did not download correctly."
-        exit 1
-    fi
-
-    # Extract the tarball into /usr/local/bin
-    tar -czf noir.tar.gz -C /usr/local/bin
-
-    # Remove the tarball to clean up
-    rm noir.tar.gz
-
-    echo "Noir installed successfully."
+    curl -L noirup.dev | bash
+    noirup
 fi
 
 # Proceed with the rest of the script for proof generation
