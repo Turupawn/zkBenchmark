@@ -4,8 +4,16 @@ set -e
 # Install Noir if not already installed
 if ! command -v noir &> /dev/null; then
     echo "Installing Noir..."
-    curl -sSL https://github.com/noir-lang/noir/releases/download/v0.3.0/noir-linux-x86_64.tar.gz | tar xz -C /usr/local/bin
+
+    # Ensure we're downloading the correct file for Linux
+    curl -sSL https://github.com/noir-lang/noir/releases/download/v0.3.0/noir-linux-x86_64.tar.gz -o noir.tar.gz
+
+    # Extract the tarball
+    tar -xvzf noir.tar.gz -C /usr/local/bin
 fi
+
+# Now continue with the rest of your script
+echo "Noir installed successfully."
 
 # Compile the Fibonacci Noir circuit
 echo "Compiling Fibonacci Noir circuit..."
