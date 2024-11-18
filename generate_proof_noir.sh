@@ -9,8 +9,14 @@ if ! command -v noir &> /dev/null; then
   tar -xvf $HOME/.nargo/bin/nargo-x86_64-unknown-linux-gnu.tar.gz -C $HOME/.nargo/bin/ && \
   echo -e '\nexport PATH=$PATH:$HOME/.nargo/bin' >> ~/.bashrc && \
   source ~/.bashrc
+  echo "AAAAAAAAA"
+  cat ~/.bashrc
+  ls $HOME/.nargo/bin/
+  echo $HOME
+  echo "BBBBBBBBB"
   curl -L bbup.dev | bash
   bbup
+  echo "CCCCCCCC"
 fi
 
 # Proceed with the rest of the script for proof generation
