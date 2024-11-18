@@ -11,7 +11,14 @@ if ! command -v noir &> /dev/null; then
   source ~/.bashrc
   echo "AAAAAAAAA1"
   cat ~/.bashrc
+
+  echo "AAAAAAAAA10"
+  ls /home/runner/
+  ls /home/runner/.nargo/
+  ls /home/runner/.nargo/bin/
   echo "AAAAAAAAA11"
+  /home/runner/.nargo/bin/nargo --version
+  echo "AAAAAAAAA111"
   nargo --version
   echo "AAAAAAAAA2"
   ls $HOME/.nargo/bin/
