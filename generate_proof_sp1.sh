@@ -14,8 +14,13 @@ fi
 # Proceed with the rest of the script for proof generation
 echo "Proceeding with proof generation..."
 
+ls
+
 cd fibonacci_sp1
 
+ls
+
+echo "BBBBBBBBBBBBBB..."
 # Check the Fibonacci Noir circuit
 echo "Checking Fibonacci Noir circuit..."
 start_check=$(date +%s%3N)  # Time in milliseconds
