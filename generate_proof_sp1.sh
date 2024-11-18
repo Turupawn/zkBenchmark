@@ -20,6 +20,9 @@ cd fibonacci_sp1
 echo "Checking Fibonacci Noir circuit..."
 start_check=$(date +%s%3N)  # Time in milliseconds
 # !!!!!!!
+echo "AAAAAAAAAAA1"
+ls
+echo "AAAAAAAAAAA2"
 cd program && cargo prove build
 # !!!!!!!
 end_check=$(date +%s%3N)
@@ -30,7 +33,7 @@ echo "Circuit check took $check_time milliseconds."
 echo "Executing Fibonacci..."
 start_execute=$(date +%s%3N)
 # !!!!!!!
-cd ../script
+cd ./script
 RUST_LOG=info cargo run --release -- --execute
 # !!!!!!!
 end_execute=$(date +%s%3N)
