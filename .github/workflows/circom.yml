@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  proof:
+  circom-proof-benchmark:
 
     runs-on: ubuntu-latest
 
@@ -27,4 +27,4 @@ jobs:
       run: npm install -g snarkjs
 
     - name: Run Proof Generation Script
-      run: ./generate_proof.sh
+      run: ./generate_proof_circom.sh

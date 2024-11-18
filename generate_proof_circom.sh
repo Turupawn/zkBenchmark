@@ -9,6 +9,8 @@ if ! command -v circom &> /dev/null; then
     sudo mv circom /usr/local/bin
 fi
 
+cd fibonacci_circom
+
 # Compile the circuit
 echo "Compiling circuit..."
 start_compile=$(date +%s%3N)  # Time in milliseconds
