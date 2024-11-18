@@ -16,7 +16,7 @@ echo "Proceeding with proof generation..."
 
 ls
 
-cd fibonacci_sp1
+cd fibonacci_sp2
 
 ls
 
