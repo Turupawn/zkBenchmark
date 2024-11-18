@@ -2,6 +2,9 @@
 set -e
 
 # Install Noir if not already installed
+
+export PATH=$PATH:$HOME/.nargo/bin
+
 echo "Installing Noir..."
 if ! command -v noir &> /dev/null; then
   mkdir -p $HOME/.nargo/bin && \
