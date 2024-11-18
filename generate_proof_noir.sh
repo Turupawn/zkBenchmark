@@ -9,12 +9,17 @@ if ! command -v noir &> /dev/null; then
   tar -xvf $HOME/.nargo/bin/nargo-x86_64-unknown-linux-gnu.tar.gz -C $HOME/.nargo/bin/ && \
   echo -e '\nexport PATH=$PATH:$HOME/.nargo/bin' >> ~/.bashrc && \
   source ~/.bashrc
-  echo "AAAAAAAAA"
+  echo "AAAAAAAAA1"
   cat ~/.bashrc
+  echo "AAAAAAAAA11"
+  nargo --version
+  echo "AAAAAAAAA2"
   ls $HOME/.nargo/bin/
+  echo "AAAAAAAAA3"
   echo $HOME
-  echo "BBBBBBBBB"
+  echo "AAAAAAAAA4"
   curl -L bbup.dev | bash
+  echo "AAAAAAAAA5"
   bbup
   echo "CCCCCCCC"
 fi
