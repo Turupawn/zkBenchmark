@@ -3,6 +3,9 @@
 use methods::{
     GUEST_CODE_FOR_ZK_PROOF_ELF, GUEST_CODE_FOR_ZK_PROOF_ID
 };
+
+use std::time::{SystemTime, UNIX_EPOCH};
+
 use risc0_zkvm::{default_prover, ExecutorEnv};
 
 fn main() {
@@ -34,11 +37,30 @@ fn main() {
     // Obtain the default prover.
     let prover = default_prover();
 
+    let start_temp = SystemTime::now();
+
     // Proof information by proving the specified ELF binary.
     // This struct contains the receipt along with statistics about execution of the guest
     let prove_info = prover
         .prove(env, GUEST_CODE_FOR_ZK_PROOF_ELF)
         .unwrap();
+
+    let end_temp = SystemTime::now();
+
+
+    let since_the_epoch_start = start_temp
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards");
+
+    let since_the_epoch_end = end_temp
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards");
+
+    let start = since_the_epoch_start.as_millis();
+    let end = since_the_epoch_end.as_millis();
+
+    eprintln!("Prove start {} Prove end {}", start, end);
+    eprintln!("Elapsed time: {} ms", end - start);
 
     // extract the receipt.
     let receipt = prove_info.receipt;
