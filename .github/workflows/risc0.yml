@@ -1,0 +1,28 @@
+name: Risc0 Proof Generation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  proof-generation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl build-essential
+
+      - name: Run Fibonacci Proof Generation
+        run: |
+          chmod +x generate_proof_risc0.sh
+          ./generate_proof_risc0.sh
