@@ -4,8 +4,8 @@ set -e
 export PATH=$PATH:$HOME/.risc0/bin
 
 echo "Installing Risc0..."
-#curl -L https://risczero.com/install | bash
-#rzup install
+curl -L https://risczero.com/install | bash
+rzup install
 
 # Proceed with the rest of the script for proof generation
 echo "Proceeding with proof generation..."
