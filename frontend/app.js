@@ -1,6 +1,6 @@
 import { BarretenbergBackend } from '@noir-lang/backend_barretenberg';
 import { Noir } from '@noir-lang/noir_js';
-import circuit from './noirCircuit.json';
+import circuit from './artifacts/noirCircuit.json';
 
 const sendProof = async () => {
   const backend = new BarretenbergBackend(circuit);
@@ -20,7 +20,7 @@ const sendProof = async () => {
 const sendProofCircom = async () => {
   document.getElementById("app_message").textContent="Generating proof... ⌛"
   const startTime = performance.now();
-  const { proof, publicSignals } = await snarkjs.groth16.fullProve( { n: 42, fibo_of_n: 267914296}, "./circomCircuit.wasm", "./circomCircuit.zkey");
+  const { proof, publicSignals } = await snarkjs.groth16.fullProve( { n: 42, fibo_of_n: 267914296}, "./artifacts/circomCircuit.wasm", "./artifacts/circomCircuit.zkey");
   const endTime = performance.now();
   document.getElementById("app_message").textContent="Generating proof... ✅"
   document.getElementById("proof").textContent = "zkSNARK: " + JSON.stringify(proof)

@@ -29,8 +29,8 @@ export default defineConfig(({ command }) => {
     plugins: [
       copy({
         targets: [
-          { src: 'node_modules/**/*.wasm', dest: 'dist/wasm' }, // Copy wasm files to dist/wasm
-          { src: 'js/snarkjs.min.js', dest: 'dist/js' }, // Copy snarkjs.min.js to dist/js
+          { src: 'js/snarkjs.min.js', dest: 'dist/js' },
+          { src: 'artifacts/*', dest: 'dist/artifacts' },
         ],
         copySync: true,
         hook: 'writeBundle',
