@@ -20,18 +20,22 @@ const wasmContentTypePlugin = {
 };
 
 export default defineConfig(({ command }) => {
-  if (command === 'serve') {
-    return {
-      plugins: [
-        copy({
-          targets: [{ src: 'node_modules/**/*.wasm', dest: 'node_modules/.vite/dist' }],
-          copySync: true,
-          hook: 'buildStart',
-        }),
-        command === 'serve' ? wasmContentTypePlugin : [],
-      ],
-    };
-  }
+  const isDev = command === 'serve';
 
-  return {};
+  return {
+    build: {
+      outDir: 'dist',
+    },
+    plugins: [
+      copy({
+        targets: [
+          { src: 'node_modules/**/*.wasm', dest: 'dist/wasm' }, // Copy to dist for production
+          { src: 'path/to/snarkjs.min.js', dest: 'dist/js' },
+        ],
+        copySync: true,
+        hook: 'writeBundle',
+      }),
+      isDev ? wasmContentTypePlugin : [],
+    ],
+  };
 });
