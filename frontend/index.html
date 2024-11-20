@@ -1,30 +1,71 @@
 <!DOCTYPE html>
 <body>
-  <h1>Aztec Noir - Scroll Demo</h1>
-  <h2><i>Prove that X and Y are not equal</i></h2>
-  <input id="connect_button" type="button" value="Connect" onclick="connectWallet()" style="display: none"></input>
-  <p id="account_address" style="display: none"></p>
-  <p id="web3_message"></p>
-  <p id="contract_state"></p>
+  <h1>ZK Benchmark</h1>
+  <h2><i>Comparing DSLs and zkVMs</i></h2>
 
-  x: <input type="input"  value="" id="_x"></input>
-  y: <input type="input"  value="" id="_y"></input>
-  <input type="button" value="Send Poof" onclick="_sendProof()"></input>
+  <a href="https://github.com/Turupawn/ActionsBenchmarkTest" 
+   target="_blank" 
+   style="text-decoration: none; color: #0366d6; font-weight: bold;">
+   Fork me on GitHub!
+  </a>
 
-  <p id="public_input"></p>
+
+  <p id="app_message"></p>
+
+  <table border="1" style="border-collapse: collapse; text-align: center;">
+    <thead>
+      <tr>
+        <th>Framework</th>
+        <th>Time</th>
+        <th>Cost</th>
+        <th>Benchmark Yourself</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Circom v2</td>
+        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893451287/job/33138475251#step:5:46">1.585s</a></td>
+        <td>TODO</td>
+        <td><input type="button" value="Benchmark Circom" onclick="_sendProofCircom()"></input></td>
+      </tr>
+      <tr>
+        <td>Noir v0.36</td>
+        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893363010/job/33138187336#step:4:214">1.173s</a></td>
+        <td>TODO</td>
+        <td><input type="button" value="Benchmark Noir" onclick="_sendProof()"></input></td>
+      </tr>
+      <tr>
+        <td>SP1</td>
+        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893961301/job/33140115064#step:4:759">55.457s</a></td>
+        <td>TODO</td>
+        <td>No WASM support</td>
+      </tr>
+      <tr>
+        <td>Risc0</td>
+        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11910259456/job/33189284269#step:4:518">24.168s</a></td>
+        <td>TODO</td>
+        <td>No WASM support</td>
+      </tr>
+    </tbody>
+  </table>
+  
   <p id="proof"></p>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+  <script type="text/javascript" src="./snarkjs.min.js"></script>
   <script type="module" src="/app.js"></script>
 </body>
 
 <script>
   function _sendProof()
   {
-    _x = document.getElementById("_x").value
-    _y = document.getElementById("_y").value
-    sendProof(_x, _y)
+    sendProof()
+  }
+
+  function _sendProofCircom()
+  {
+    sendProofCircom()
   }
 </script>
 
