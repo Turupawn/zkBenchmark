@@ -36,7 +36,7 @@ export default defineConfig({
                 { src: 'artifacts/*', dest: 'dist/artifacts' },
             ],
             copySync: true,
-            hook: 'buildStart',
+            hook: 'writeBundle',
         }),
         wasmContentTypePlugin,
         {
