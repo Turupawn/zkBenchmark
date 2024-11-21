@@ -1,7 +1,0 @@
-[package]
-name = "fibonacci_noir17"
-type = "bin"
-authors = [""]
-compiler_version = "0.17.0"
-
-[dependencies]
