@@ -30,7 +30,11 @@ export default defineConfig({
     },
     plugins: [
         copy({
-            targets: [{ src: 'node_modules/**/*.wasm', dest: 'node_modules/.vite/dist' }],
+            targets: [
+                { src: 'node_modules/**/*.wasm', dest: 'node_modules/.vite/dist' },
+                { src: 'js/snarkjs.min.js', dest: 'dist/js' },
+                { src: 'artifacts/*', dest: 'dist/artifacts' },
+            ],
             copySync: true,
             hook: 'buildStart',
         }),
