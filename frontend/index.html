@@ -1,72 +1,176 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZK Benchmark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f8fa;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #0366d6;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header h2 {
+      margin: 0.5rem 0 0;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #app_message {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #e8f5ff;
+      border: 1px solid #b3dfff;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    table th {
+      background-color: #0366d6;
+      color: white;
+    }
+    table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .github-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .github-link a {
+      text-decoration: none;
+      color: #333;
+      font-size: 2rem;
+    }
+    #proof {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #fefefe;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+    }
+    #proof-toggle {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #0366d6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #proof-toggle:hover {
+      background-color: #024aa0;
+    }
+  </style>
+</head>
 <body>
-  <h1>ZK Benchmark</h1>
-  <h2><i>Comparing DSLs and zkVMs</i></h2>
 
-  <a href="https://github.com/Turupawn/ActionsBenchmarkTest" 
-   target="_blank" 
-   style="text-decoration: none; color: #0366d6; font-weight: bold;">
-   Fork me on GitHub!
-  </a>
+  <header>
+    <h1>ZK Benchmark</h1>
+    <h2><i>Comparing DSLs and zkVMs</i></h2>
+  </header>
 
+  <main>
+    <p id="app_message">Messages from the app will be displayed here.</p>
 
-  <p id="app_message"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Time</th>
+          <th>Cost</th>
+          <th>Benchmark Yourself</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Circom v2</td>
+          <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893451287/job/33138475251#step:5:46">1.585s</a></td>
+          <td>TODO</td>
+          <td><button onclick="_generateCircomProof()">Benchmark Circom</button></td>
+        </tr>
+        <tr>
+          <td>Noir v0.36</td>
+          <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893363010/job/33138187336#step:4:214">1.173s</a></td>
+          <td>TODO</td>
+          <td><button onclick="_generateNoirProof()">Benchmark Noir</button></td>
+        </tr>
+        <tr>
+          <td>SP1</td>
+          <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893961301/job/33140115064#step:4:759">55.457s</a></td>
+          <td>TODO</td>
+          <td>No WASM support</td>
+        </tr>
+        <tr>
+          <td>Risc0</td>
+          <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11910259456/job/33189284269#step:4:518">24.168s</a></td>
+          <td>TODO</td>
+          <td>No WASM support</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <table border="1" style="border-collapse: collapse; text-align: center;">
-    <thead>
-      <tr>
-        <th>Framework</th>
-        <th>Time</th>
-        <th>Cost</th>
-        <th>Benchmark Yourself</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Circom v2</td>
-        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893451287/job/33138475251#step:5:46">1.585s</a></td>
-        <td>TODO</td>
-        <td><input type="button" value="Benchmark Circom" onclick="_sendProofCircom()"></input></td>
-      </tr>
-      <tr>
-        <td>Noir v0.36</td>
-        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893363010/job/33138187336#step:4:214">1.173s</a></td>
-        <td>TODO</td>
-        <td><input type="button" value="Benchmark Noir" onclick="_sendProof()"></input></td>
-      </tr>
-      <tr>
-        <td>SP1</td>
-        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11893961301/job/33140115064#step:4:759">55.457s</a></td>
-        <td>TODO</td>
-        <td>No WASM support</td>
-      </tr>
-      <tr>
-        <td>Risc0</td>
-        <td><a href="https://github.com/Turupawn/ActionsBenchmarkTest/actions/runs/11910259456/job/33189284269#step:4:518">24.168s</a></td>
-        <td>TODO</td>
-        <td>No WASM support</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p id="proof"></p>
+    <div id="proof">Proof data will appear here. You can paste or dynamically load very large text content.</div>
+
+    <div class="github-link">
+      <a href="https://github.com/Turupawn/ActionsBenchmarkTest" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.45.55.38A8.001 8.001 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+    </div>
+  </main>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
   <script type="text/javascript" src="./js/snarkjs.min.js"></script>
   <script type="module" src="/app.js"></script>
+
+  <script>
+    function toggleProof() {
+      const proofDiv = document.getElementById('proof');
+      proofDiv.style.display = 'block';
+    }
+
+    function _generateNoirProof() {
+      generateNoirProof();
+    }
+
+    function _generateCircomProof() {
+      generateCircomProof();
+    }
+  </script>
+
 </body>
-
-<script>
-  function _sendProof()
-  {
-    sendProof()
-  }
-
-  function _sendProofCircom()
-  {
-    sendProofCircom()
-  }
-</script>
-
 </html>
