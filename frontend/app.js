@@ -4,11 +4,12 @@ import circuit from './artifacts/noirCircuit.json';
 
 const sendProof = async () => {
   const backend = new BarretenbergBackend(circuit);
-  const noir = new Noir(circuit, backend);
+  const noir = new Noir(circuit);
   const input = { n: 42 };
   document.getElementById("app_message").textContent="Generating proof... ⌛"
   const startTime = performance.now();
-  var proof = await noir.generateFinalProof(input);
+  const { witness } = await noir.execute(input);
+  var proof = await backend.generateProof(witness);
   const endTime = performance.now();
   document.getElementById("app_message").textContent="Generating proof... ✅"
   proof = "0x" + ethereumjs.Buffer.Buffer.from(proof.proof).toString('hex')
