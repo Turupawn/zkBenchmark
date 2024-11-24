@@ -22,10 +22,10 @@ fi
 # Proceed with the rest of the script for proof generation
 echo "Proceeding with proof generation..."
 
-cd fibonacci_noir
+cd mixer_noir
 
-# Check the Fibonacci Noir circuit
-echo "Checking Fibonacci Noir circuit..."
+# Check the Mixer Noir circuit
+echo "Checking Mixer Noir circuit..."
 start_check=$(date +%s%3N)  # Time in milliseconds
 nargo check
 end_check=$(date +%s%3N)
@@ -33,7 +33,7 @@ check_time=$((end_check - start_check))
 echo "Circuit check took $check_time milliseconds."
 
 # Execute
-echo "Executing Fibonacci..."
+echo "Executing Mixer..."
 start_execute=$(date +%s%3N)
 nargo execute
 end_execute=$(date +%s%3N)
@@ -43,7 +43,7 @@ echo "Execution took $execute_time milliseconds."
 # Generate proving and verification keys, and generate proof
 echo "Setting up and generating proof..."
 start_proof=$(date +%s%3N)
-~/.bb/bb prove -b ./target/fibonacci.json -w ./target/fibonacci.gz -o ./target/proo
+~/.bb/bb prove -b ./target/mixer.json -w ./target/mixer.gz -o ./target/proo
 end_proof=$(date +%s%3N)
 proof_time=$((end_proof - start_proof))
 echo "Proof generation took $proof_time milliseconds."
