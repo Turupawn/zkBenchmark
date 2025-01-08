@@ -18,18 +18,17 @@ cd fibonacci_openvm
 
 # Build the project
 cargo openvm build
+cargo openvm keygen
 
 # Prove the Fibonacci circuit
 echo "Checking Fibonacci OpenVM circuit..."
-#start_check=$(date +%s%3N)  # Time in milliseconds
+start_check=$(date +%s%3N)  # Time in milliseconds
 #OPENVM_FAST_TEST=1 cargo openvm prove app --input "0x0A00000000000000"
-ls
-OPENVM_FAST_TEST=1 cargo openvm prove app --input "0x000000000000002A"
-ls
-#end_proof=$(date +%s%3N)
-#proof_time=$((end_proof - start_proof))
-#echo "Circuit check took $proof_time milliseconds."
+cargo openvm prove app --input "0x000000000000002A"
+end_proof=$(date +%s%3N)
+proof_time=$((end_proof - start_proof))
+echo "Circuit check took $proof_time milliseconds."
 
 # Summary of times
-#total_time=$((proof_time))
-#echo "Total time taken: $total_time milliseconds."
+total_time=$((proof_time))
+echo "Total time taken: $total_time milliseconds."
