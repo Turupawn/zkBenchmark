@@ -13,3 +13,11 @@ Consider this repository as a **living work in progress**, ZK is moving fast.
 - **Reproducible Benchmarks:** Each benchmark is meant to be easily reproduced through of GitHub Actions.
 - **Starter Scripts:** The included scripts serve as a guide to help you get started with the tool of your choice.
 - **zkVMs tests now live:** zkDSLs benchmarks coming soon™.
+
+## Benchmarks
+
+| Project         | Benchmark 1 (ms) | Benchmark 2 (ms) | Benchmark 3 (ms) | Average (ms) |
+|-----------------|------------------|------------------|------------------|--------------|
+| **SP1** | [468362ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11893961301/job/33140115064#step:4:760) | TODO | TODO | 468362ms |
+| **Risc0** | [24168ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11910259456/job/33189284269#step:4:520) | TODO | TODO | 24168ms |
+| **OpenVM** | [Fails](https://github.com/Turupawn/zkBenchmark/actions/runs/12669180835/job/35306144735#step:4:1124) | TODO | TODO | TODO |
