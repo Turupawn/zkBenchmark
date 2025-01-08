@@ -4,7 +4,11 @@ set -e
 echo "Installing OpenVM..."
 rustup toolchain install nightly
 cargo +nightly install --git http://github.com/openvm-org/openvm.git cargo-openvm
-rustup component add rust-src --toolchain nightly-2024-10-30-x86_64-unknown-linux-gnu
+cargo openvm --version
+
+rustup install nightly-2024-10-30
+rustup component add rust-src --toolchain nightly-2024-10-30
+
 cargo openvm --version
 
 # Proceed with the rest of the script for proof generation
