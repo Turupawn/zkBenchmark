@@ -1,4 +1,4 @@
-# Filosofías Código's zkBenchmarking
+# Filosofía Código's zkBenchmarking
 
 This repository holds my personal journey through benchmarking major Zero-Knowledge projects.
 
