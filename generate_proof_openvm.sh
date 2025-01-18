@@ -22,7 +22,7 @@ cargo openvm keygen
 
 # Prove the Fibonacci circuit
 echo "Proving Fibonacci OpenVM circuit..."
-start_prove=$(date +%s%3N)  # Time in milliseconds
+start_proof=$(date +%s%3N)  # Time in milliseconds
 #OPENVM_FAST_TEST=1 cargo openvm prove app --input "0x2A00000000000000"
 cargo openvm prove app --input "0x2A00000000000000"
 end_proof=$(date +%s%3N)
