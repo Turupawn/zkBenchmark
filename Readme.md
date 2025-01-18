@@ -20,4 +20,4 @@ Consider this repository as a **living work in progress**, ZK is moving fast.
 |-----------------|------------------|------------------|------------------|--------------|
 | **SP1** | [468362ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11893961301/job/33140115064#step:4:760) | TODO | TODO | 468362ms |
 | **Risc0** | [24168ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11910259456/job/33189284269#step:4:520) | TODO | TODO | 24168ms |
-| **OpenVM** | [1737161384894ms](https://github.com/Turupawn/zkBenchmark/actions/runs/12839139197/job/35805964377#step:4:1133) | TODO | TODO | 1737161384894ms |
+| **OpenVM** | [17462ms](https://github.com/Turupawn/zkBenchmark/actions/runs/12839295926/job/35806339304#step:4:1133) | TODO | TODO | 17462ms |
