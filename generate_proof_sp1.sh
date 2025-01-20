@@ -14,22 +14,13 @@ fi
 # Proceed with the rest of the script for proof generation
 echo "Proceeding with proof generation..."
 
-ls
-
 cd fibonacci_sp2
 
-ls
-
-echo "BBBBBBBBBBBBBB..."
 # Check the Fibonacci Noir circuit
 echo "Checking Fibonacci Noir circuit..."
 start_check=$(date +%s%3N)  # Time in milliseconds
-# !!!!!!!
-echo "AAAAAAAAAAA1"
-ls
-echo "AAAAAAAAAAA2"
+
 cd program && cargo prove build
-# !!!!!!!
 end_check=$(date +%s%3N)
 check_time=$((end_check - start_check))
 echo "Circuit check took $check_time milliseconds."
@@ -37,10 +28,10 @@ echo "Circuit check took $check_time milliseconds."
 # Execute
 echo "Executing Fibonacci..."
 start_execute=$(date +%s%3N)
-# !!!!!!!
+
 cd ../script
 RUST_LOG=info cargo run --release -- --execute
-# !!!!!!!
+
 end_execute=$(date +%s%3N)
 execute_time=$((end_execute - start_execute))
 echo "Execution took $execute_time milliseconds."
@@ -48,10 +39,10 @@ echo "Execution took $execute_time milliseconds."
 # Generate proving and verification keys, and generate proof
 echo "Setting up and generating proof..."
 start_proof=$(date +%s%3N)
-# !!!!!!!
+
 cd ../script
 RUST_LOG=info cargo run --release -- --prove
-# !!!!!!!
+
 end_proof=$(date +%s%3N)
 proof_time=$((end_proof - start_proof))
 echo "Proof generation took $proof_time milliseconds."
