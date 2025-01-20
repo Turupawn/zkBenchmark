@@ -14,7 +14,7 @@ Consider this repository as a **living work in progress**, ZK is moving fast.
 - **Starter Scripts:** The included scripts serve as a guide to help you get started with the tool of your choice.
 - **zkVMs tests now live:** zkDSLs benchmarks coming soon™.
 
-## Benchmarks
+## zkVM Benchmarks
 
 | Project         | Benchmark 1 (ms) | Benchmark 2 (ms) | Benchmark 3 (ms) | Average (ms) |
 |-----------------|------------------|------------------|------------------|--------------|
