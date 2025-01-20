@@ -19,5 +19,5 @@ Consider this repository as a **living work in progress**, ZK is moving fast.
 | Project         | Benchmark 1 (ms) | Benchmark 2 (ms) | Benchmark 3 (ms) | Average (ms) |
 |-----------------|------------------|------------------|------------------|--------------|
 | **SP1** | [468362ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11893961301/job/33140115064#step:4:760) | TODO | TODO | 468362ms |
-| **Risc0** | [24168ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11910259456/job/33189284269#step:4:520) | TODO | TODO | 24168ms |
-| **OpenVM** | [17462ms](https://github.com/Turupawn/zkBenchmark/actions/runs/12839295926/job/35806339304#step:4:1133) | TODO | TODO | 17462ms |
+| **Risc0** | [24168ms](https://github.com/Turupawn/zkBenchmark/actions/runs/11910259456/job/33189284269#step:4:520) | [26720](https://github.com/Turupawn/zkBenchmark/actions/runs/12876481850/job/35899541921#step:4:500) | TODO | 24168ms |
+| **OpenVM** | [17462ms](https://github.com/Turupawn/zkBenchmark/actions/runs/12839295926/job/35806339304#step:4:1133) | [17485](https://github.com/Turupawn/zkBenchmark/actions/runs/12876480553/job/35899539095#step:4:1133) | TODO | 17462ms |
