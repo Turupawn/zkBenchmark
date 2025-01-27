@@ -10,7 +10,7 @@ Consider this repository as a **living work in progress**, ZK is moving fast.
 
 ### Features
 
-- **Reproducible Benchmarks:** Each benchmark is meant to be easily reproduced through of GitHub Actions.
+- **Reproducible Benchmarks:** Each benchmark is meant to be easily reproduced locally or through of GitHub Actions.
 - **Starter Scripts:** The included scripts serve as a guide to help you get started with the tool of your choice.
 - **zkVMs tests now live:** zkDSLs benchmarks coming soon™.
 
